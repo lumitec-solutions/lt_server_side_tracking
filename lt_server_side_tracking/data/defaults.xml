@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- lead currency -->
+        <record model="ir.config_parameter" id="Lead_value">
+            <field name="key">lead.value</field>
+            <field name="value" type="int">500</field>
+        </record>
+
+        <!-- lead value -->
+        <record model="ir.config_parameter" id="lead_currency">
+            <field name="key">lead.currency</field>
+            <field name="value" type="char">CHF</field>
+        </record>
+    </data>
+</odoo>
