@@ -8,7 +8,6 @@ from odoo import models, api
 import requests
 import time
 import hashlib
-import pycountry
 
 
 class CrmLead(models.Model):
@@ -42,7 +41,7 @@ class CrmLead(models.Model):
                             'city') else [],
                         "zp": [hashlib.sha256(values.get('zip').encode('utf-8')).hexdigest()] if values.get(
                             'zip') else [],
-                        "country": [hashlib.sha256(pycountry.countries.search_fuzzy(country.name)[0].alpha_2.encode(
+                        "country": [hashlib.sha256(country.code.encode(
                             'utf-8')).hexdigest()] if country else [],
                     },
                     "custom_data": {
