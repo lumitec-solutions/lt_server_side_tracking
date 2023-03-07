@@ -22,6 +22,9 @@
         'data/defaults.xml',
         'views/res_config_settings.xml',
     ],
+    'external_dependencies': {
+        'python': ['pycountry'],
+    },
     'installable': True,
     'application': False,
     'auto_install': False,
