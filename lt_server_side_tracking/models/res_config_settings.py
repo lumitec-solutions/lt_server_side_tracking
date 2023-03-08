@@ -12,7 +12,7 @@ class ResConfigSettings(models.TransientModel):
 
     pixel = fields.Char(string="Pixel Id")
     access_token = fields.Char(string="Access Token")
-    is_test = fields.Boolean(default=False)
+    is_test = fields.Boolean(default=False, string="Run Test")
     test_event_code = fields.Char(string="Test Event Code")
 
     @api.model

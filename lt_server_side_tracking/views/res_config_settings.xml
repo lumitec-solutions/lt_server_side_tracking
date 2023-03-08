@@ -13,11 +13,11 @@
                         <div class="o_setting_right_pane">
                             <label string="Pixel Id" for="pixel"/>
                             <div class="text-muted">
-                                Pixel Id of facebook
+                                Meta Pixel Id
                             </div>
                             <div class="content-group">
                                 <div class="mt16">
-                                    <field name="pixel" class="o_light_label"/>
+                                    <field name="pixel" class="o_light_label" attrs="{'required': [('access_token', '!=', '')]}"/>
                                 </div>
                             </div>
                         </div>
@@ -26,11 +26,11 @@
                         <div class="o_setting_right_pane">
                             <label string="Access Token" for="access_token"/>
                             <div class="text-muted">
-                                Access Token facebook
+                               Meta Access Token
                             </div>
                             <div class="content-group">
                                 <div class="mt16">
-                                    <field name="access_token" class="o_light_label"/>
+                                    <field name="access_token" class="o_light_label" attrs="{'required': [('pixel', '!=', '')]}"/>
                                 </div>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                         <div class="o_setting_right_pane">
                             <label string="is_test" for="is_test"/>
                             <div class="text-muted">
-                                Run in Test
+                                Run in Test Mode
                             </div>
                             <div class="content-group" attrs="{'invisible': [('is_test', '=', False)]}">
                                 <div class="row mt16" id="mail_twilio_sid">
