@@ -45,8 +45,8 @@ class CrmLead(models.Model):
                             'utf-8')).hexdigest()] if country else [],
                     },
                     "custom_data": {
-                        "currency": self.env['ir.config_parameter'].sudo().get_param('lead.conversion.currency'),
-                        "value": int(self.env['ir.config_parameter'].sudo().get_param('lead.conversion.value')),
+                        "currency": self.env['ir.config_parameter'].sudo().get_param('lead.currency'),
+                        "value": int(self.env['ir.config_parameter'].sudo().get_param('lead.value')),
                     },
                     "event_id": res.id
                 }
