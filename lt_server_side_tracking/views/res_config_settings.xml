@@ -10,27 +10,27 @@
                 <h2>Server Side Tracking</h2>
                 <div class="row mt16 o_settings_container">
                     <div class="col-12 col-lg-6 o_setting_box">
-                        <div class="o_setting_right_pane">
-                            <label string="Pixel Id" for="pixel"/>
-                            <div class="text-muted">
-                                Meta Pixel Id
-                            </div>
-                            <div class="content-group">
-                                <div class="mt16">
-                                    <field name="pixel" class="o_light_label" attrs="{'required': [('access_token', '!=', '')]}"/>
-                                </div>
-                            </div>
+                        <div class="o_setting_left_pane">
+                            <field name="server_side_tracking_pixel"/>
                         </div>
-                    </div>
-                    <div class="col-12 col-lg-6 o_setting_box">
                         <div class="o_setting_right_pane">
-                            <label string="Access Token" for="access_token"/>
+                            <label string="Meta Pixel" for="server_side_tracking_pixel"/>
                             <div class="text-muted">
-                               Meta Access Token
+                                Pixel Id and Access Token
                             </div>
-                            <div class="content-group">
-                                <div class="mt16">
-                                    <field name="access_token" class="o_light_label" attrs="{'required': [('pixel', '!=', '')]}"/>
+                            <div class="content-group"
+                                 attrs="{'invisible': [('server_side_tracking_pixel', '=', False)]}">
+                                <div class="row mt16">
+                                    <label for="pixel" class="col-lg-3"/>
+
+                                    <field name="pixel" class="o_light_label"
+                                           attrs="{'required': [('access_token', '!=', '')]}"/>
+                                </div>
+                                <div class="row mt16">
+                                    <label for="access_token" class="col-lg-3"/>
+
+                                    <field name="access_token" class="o_light_label"
+                                           attrs="{'required': [('pixel', '!=', '')]}"/>
                                 </div>
                             </div>
                         </div>
@@ -40,12 +40,12 @@
                             <field name="is_test"/>
                         </div>
                         <div class="o_setting_right_pane">
-                            <label string="is_test" for="is_test"/>
+                            <label string="Run Test" for="is_test"/>
                             <div class="text-muted">
                                 Run in Test Mode
                             </div>
                             <div class="content-group" attrs="{'invisible': [('is_test', '=', False)]}">
-                                <div class="row mt16" id="mail_twilio_sid">
+                                <div class="row mt16">
                                     <label for="test_event_code" class="col-lg-3"/>
                                     <field name="test_event_code" placeholder="e.g. TEST5241"/>
                                 </div>

@@ -10,10 +10,11 @@ from odoo import api, fields, models
 class ResConfigSettings(models.TransientModel):
     _inherit = "res.config.settings"
 
-    pixel = fields.Char(string="Pixel Id")
+    pixel = fields.Char(string="Meta Pixel Id")
     access_token = fields.Char(string="Access Token")
     is_test = fields.Boolean(default=False, string="Run Test")
     test_event_code = fields.Char(string="Test Event Code")
+    server_side_tracking_pixel = fields.Boolean(default=False, string="Server Side Tracking")
 
     @api.model
     def get_values(self):
